@@ -22,7 +22,7 @@ gulp.task('sass', function() {
 		   .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('browserSync', function() {
+/* gulp.task('browserSync', function() {
 	browserSync.init(
 	{
 		server: 
@@ -30,6 +30,14 @@ gulp.task('browserSync', function() {
 			baseDir: 'templates/main',
 			index: 'index.html'
 		},
+		notify: false
+	});
+}); */
+
+gulp.task('browserSync', function() {
+	browserSync.init(
+	{
+		proxy: "127.0.0.1:8000",
 		notify: false
 	});
 });
