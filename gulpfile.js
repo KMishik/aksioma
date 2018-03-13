@@ -1,3 +1,5 @@
+'use strict'
+
 const gulp	= require('gulp');
 const sass	= require('gulp-sass');
 const pug		= require('gulp-pug');
@@ -30,8 +32,9 @@ gulp.task('pug', () => {
 
 gulp.task('sass', function() {
 	return gulp.src('src/scss/**/*.+(scss|sass)')// Gets all files ending with .scss and .sass in app/scss and children dirs
-		   .pipe(sass()) // Convert Sass to CSS with gulp-sass
-		   .on('error', console.log)
+		   .pipe(sass().on('error', function(err) {
+			   sass.logError(err);
+		   })) // Convert Sass to CSS with gulp-sass
 		   .pipe(gulp.dest('static/css/'))
 		   .pipe(browserSync.reload({stream: true}))
 });

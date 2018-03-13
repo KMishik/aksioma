@@ -7,5 +7,11 @@
             var annot = $(this).children('.annotate');
             !(annot.hasClass('show')) || annot.removeClass('show');
         });
+        $('.servlist').slick({
+            slidesToScroll: 1,
+            draggable: false,
+            slidesToShow: 4,
+            infinite: true
+        });
     });
 })(jQuery);

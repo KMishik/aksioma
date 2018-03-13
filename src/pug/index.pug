@@ -7,6 +7,11 @@ html(lang='ru')
     link(rel='stylesheet', type='text/css', href="{% static 'css/reset.css' %}")
     link(rel='stylesheet', type='text/css', href="{% static 'css/main.css' %}")
     link(rel='stylesheet', type='text/css', href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}")
+    link(rel='stylesheet', type='text/css', href="{% static 'assets/slick/css/slick.css' %}")
+    //-link(rel='stylesheet', type='text/css', href="{% static 'assets/slick/css/slick-theme.css' %}")
+    link(rel='stylesheet', type='text/css', href="{% static 'assets/owl/css/owl.carousel.css' %}")
+    //-link(rel='stylesheet', type='text/css', href="{% static 'assets/owl/css/owl.theme.default.css' %}")
+
   body
     header
       div(id='nav-bar-top')
@@ -41,88 +46,10 @@ html(lang='ru')
     section(id='services')
       div(class='title')
         p Основные направления нашей деятельности:
-        //- img(src="{% static 'images/sheep.png' %}") 
-      div(class='content flex')
-        div(class='col')
-          div(class='annotate')
-            h1 Услуга
-            img(src="{% static 'images/service_anot.png' %}")
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
-              ты все повстречался за буквенных рекламных образ которое, 
-              своих вопроса буквоград.
-          div(class='descriptor')
-            h1 Заголовок.
-            p.
-              Предлагаем вам эту офигенскую
-              услугу по очень очень при очень
-              уникальным ценам.
-              Вы просто офигеете
-          p
-            img(src="{% static 'images/service.png' %}")
-        div(class='col')
-          div(class='annotate')
-            h1 Услуга
-            img(src="{% static 'images/service_anot.png' %}")
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
-              ты все повстречался за буквенных рекламных образ которое, 
-              своих вопроса буквоград.
-          div(class='descriptor')
-            h1 Заголовок.
-            p.
-              Предлагаем вам эту офигенскую
-              услугу по очень очень при очень
-              уникальным ценам.
-              Вы просто офигеете
-          p
-            img(src="{% static 'images/service.png' %}") 
-        div(class='col')
-          div(class='annotate')
-            h1 Услуга
-            img(src="{% static 'images/service_anot.png' %}")
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
-              ты все повстречался за буквенных рекламных образ которое, 
-              своих вопроса буквоград.
-          div(class='descriptor')
-            h1 Заголовок.
-            p.
-              Предлагаем вам эту офигенскую
-              услугу по очень очень при очень
-              уникальным ценам.
-              Вы просто офигеете
-          p
-            img(src="{% static 'images/service.png' %}")
-        div(class='col')
-          div(class='annotate')
-            h1 Услуга
-            img(src="{% static 'images/service_anot.png' %}")
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
-              ты все повстречался за буквенных рекламных образ которое, 
-              своих вопроса буквоград.
-          div(class='descriptor')
-            h1 Заголовок.
-            p.
-              Предлагаем вам эту офигенскую
-              услугу по очень очень при очень
-              уникальным ценам.
-              Вы просто офигеете
-          p
-            img(src="{% static 'images/service.png' %}")
+      div(class='content servlist')
+          - for (let i = 0; i < 8; i++) {
+          include includes/_servlist.pug
+          - }
     section(id='content-2')
       div(class='title')
         p Раздел 2
@@ -137,7 +64,9 @@ html(lang='ru')
       div(class='content')
     footer
       h1 Подвал
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')  
-    script(src="{% static 'js/test.js' %}")
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+    script(src="{% static 'js/core.js' %}")
+    script(src="{% static 'assets/slick/js/slick.js' %}")
+    script(src="{% static 'assets/owl/js/owl.carousel.js' %}")
       
       

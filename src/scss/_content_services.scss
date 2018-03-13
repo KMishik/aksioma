@@ -5,15 +5,26 @@
     text-align: center;
     padding: 15px 0px 0px 0px;
   }
-  .content{
+  .content {
+    width: 1200px;
+    margin: auto;
     &.flex {
       margin: 50px 50px 0px 50px;
       justify-content: space-around;
     }
+
     .col {
-      margin: 10px;
+      width: 160px;
+      height: 230px;
+//     border: solid;
       position: relative;
+      font-size: 0px;
       cursor: pointer;
+      & > img {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
       .annotate {
         width: 160%;
         height: 160%;
@@ -36,7 +47,7 @@
         box-sizing: border-box;
         text-align: justify;
         padding: 5px 10px 5px 10px;
-        height: 98.6%;
+        height: 100%;
         background-color: black;
         opacity: 0.5;
         color: white;
@@ -51,6 +62,7 @@
       }
       &:hover {
         .descriptor {
+          font-size: 14px;
           visibility: visible;
         }
       }
