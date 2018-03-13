@@ -1,0 +1,14 @@
+#nav-bar-main {
+  background-color: #468a7f;
+  color: #ffffff;
+  a {
+    color:inherit;
+  }
+  ul {
+    @include flexbox();
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    height: 40px;
+  }
+}

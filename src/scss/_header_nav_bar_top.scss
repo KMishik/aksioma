@@ -1,0 +1,30 @@
+#nav-bar-top {
+  @include flexbox();
+  justify-content:space-between;
+  background-color: #686370;
+  color: #ffffff;
+  p {
+    margin: 10px 0px 10px 0px;
+  }
+  a {
+    color:inherit;
+  }
+  & > div:first-child > p {
+    margin-left: 50px;
+  }
+  .nav-menu {
+    @include flexbox();
+    justify-content: space-around;
+    p {
+      font-family: FontAwesome;
+      padding-right: 20px;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i})::before {
+          padding-right: 5px;
+          content: map-get($top-header-menu-icon, $i);
+        }
+      }
+    }
+  }
+}

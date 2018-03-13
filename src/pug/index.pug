@@ -1,9 +1,143 @@
 doctype html
+|
+| {% load static %}
 html(lang='ru')
   head
+    title Аксиома Ltd.
+    link(rel='stylesheet', type='text/css', href="{% static 'css/reset.css' %}")
+    link(rel='stylesheet', type='text/css', href="{% static 'css/main.css' %}")
+    link(rel='stylesheet', type='text/css', href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}")
   body
-    h1 Привет сына Илюха
-    br
-    h2 ... и Вселенная !
-    
-  
+    header
+      div(id='nav-bar-top')
+        div
+          p +7 (812) 111-11-11
+        div(class='nav-menu')
+          p 
+            a(href='') Задать вопрос
+          p 
+            a(href='') Написать письмо
+          p 
+            a(href='') Заказать звонок              
+      div(id='nav-bar-main')
+        div(id='logo')
+        ul
+          li 
+            a(href='') О компании
+          li
+            a(href='') Проекты
+          li 
+            a(href='') Клиенты
+          li
+            a(href='') Решения
+          li
+            a(href='') Направления
+      div(id='nav-bar-center', class='table')
+        div(class='content row')
+          p Поддержка бизнеса
+          p в современном мире
+          p AKsioma group
+          p юридическая компания
+    section(id='services')
+      div(class='title')
+        p Основные направления нашей деятельности:
+        //- img(src="{% static 'images/sheep.png' %}") 
+      div(class='content flex')
+        div(class='col')
+          div(class='annotate')
+            h1 Услуга
+            img(src="{% static 'images/service_anot.png' %}")
+            p.
+              Далеко-далеко за словесными горами в стране, 
+              гласных и согласных живут рыбные тексты. 
+              Большого, подзаголовок! 
+              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
+              ты все повстречался за буквенных рекламных образ которое, 
+              своих вопроса буквоград.
+          div(class='descriptor')
+            h1 Заголовок.
+            p.
+              Предлагаем вам эту офигенскую
+              услугу по очень очень при очень
+              уникальным ценам.
+              Вы просто офигеете
+          p
+            img(src="{% static 'images/service.png' %}")
+        div(class='col')
+          div(class='annotate')
+            h1 Услуга
+            img(src="{% static 'images/service_anot.png' %}")
+            p.
+              Далеко-далеко за словесными горами в стране, 
+              гласных и согласных живут рыбные тексты. 
+              Большого, подзаголовок! 
+              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
+              ты все повстречался за буквенных рекламных образ которое, 
+              своих вопроса буквоград.
+          div(class='descriptor')
+            h1 Заголовок.
+            p.
+              Предлагаем вам эту офигенскую
+              услугу по очень очень при очень
+              уникальным ценам.
+              Вы просто офигеете
+          p
+            img(src="{% static 'images/service.png' %}") 
+        div(class='col')
+          div(class='annotate')
+            h1 Услуга
+            img(src="{% static 'images/service_anot.png' %}")
+            p.
+              Далеко-далеко за словесными горами в стране, 
+              гласных и согласных живут рыбные тексты. 
+              Большого, подзаголовок! 
+              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
+              ты все повстречался за буквенных рекламных образ которое, 
+              своих вопроса буквоград.
+          div(class='descriptor')
+            h1 Заголовок.
+            p.
+              Предлагаем вам эту офигенскую
+              услугу по очень очень при очень
+              уникальным ценам.
+              Вы просто офигеете
+          p
+            img(src="{% static 'images/service.png' %}")
+        div(class='col')
+          div(class='annotate')
+            h1 Услуга
+            img(src="{% static 'images/service_anot.png' %}")
+            p.
+              Далеко-далеко за словесными горами в стране, 
+              гласных и согласных живут рыбные тексты. 
+              Большого, подзаголовок! 
+              Ручеек лучше раз ее она напоивший речью грамматики единственное, 
+              ты все повстречался за буквенных рекламных образ которое, 
+              своих вопроса буквоград.
+          div(class='descriptor')
+            h1 Заголовок.
+            p.
+              Предлагаем вам эту офигенскую
+              услугу по очень очень при очень
+              уникальным ценам.
+              Вы просто офигеете
+          p
+            img(src="{% static 'images/service.png' %}")
+    section(id='content-2')
+      div(class='title')
+        p Раздел 2
+      div(class='content')
+    section(id='content-3')
+      div(class='title')
+        p Раздел 3
+      div(class='content')  
+    section(id='content-4')
+      div(class='title')
+        p Раздел 4
+      div(class='content')
+    footer
+      h1 Подвал
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')  
+    script(src="{% static 'js/test.js' %}")
+      
+      

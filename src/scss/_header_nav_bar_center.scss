@@ -1,0 +1,22 @@
+#nav-bar-center {
+  background-image: url('../images/header.jpg');
+  background-size: auto;
+  color: #ffffff;
+  .content {
+    text-align: center;
+    vertical-align: bottom;
+    & > p:nth-child(1) {
+        padding: 40px 0px 0px 0px;
+    }
+    & > p:nth-child(2) {
+        padding: 10px 0px 0px 0px;
+    }
+    & > p:nth-child(3) {
+        padding: 80px 0px 0px 0px;
+        font-size: 3em;
+    }
+    & > p:nth-child(4) {
+        padding: 80px 0px 18px 0px;
+    }
+  }
+}

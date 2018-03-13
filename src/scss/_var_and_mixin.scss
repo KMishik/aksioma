@@ -1,0 +1,13 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+$top-header-menu-icon: (
+1: '\f0e5',
+2: '\f003',
+3: '\f095',
+);

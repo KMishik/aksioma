@@ -1,0 +1,57 @@
+@import 'var_and_mixin';
+@import 'header_nav_bar_top';
+@import 'header_nav_bar_center';
+@import 'header_nav_bar_main';
+
+@import 'content_services';
+
+html{
+  overflow-y: scroll;
+}
+
+a {
+  color: #102bdd;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  .row {
+    display: table-row;
+    .col {
+      display: table-cell;
+    }
+  }
+}
+
+.flex {
+  @include flexbox();
+}
+
+header {
+  height: 400px;
+  width: 100%;
+}
+
+[id*='content'], footer {
+  color: #ffffff;
+  height: 200px;
+}
+
+#content-2 {
+  background-color: rgba(#b9b87a, 0.86);
+}
+
+#content-3 {
+  background-color: rgba(#87b97a, 0.86);
+}
+
+#content-4 {
+  background-color: rgba(#b9a77a, 0.86);
+}
+
+footer {
+  background-color: #323131;
+}

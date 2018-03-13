@@ -1,8 +1,22 @@
 const gulp	= require('gulp');
 const sass	= require('gulp-sass');
 const pug		= require('gulp-pug');
+const ts		=	require('gulp-typescript');
 const browserSync	= require('browser-sync').create();
 
+let tsProject = ts.createProject({
+	removeComments:	true,
+	noImplicitAny:	true,
+	target:	'ES3',
+	module:	'commonjs',
+	declarationFiles:	false,
+});
+
+gulp.task('tsc', () => {
+	return gulp.src('src/ts/**/*.ts')
+						 .pipe(tsProject())
+						 .js.pipe(gulp.dest('static/js/'));
+});
 
 gulp.task('pug', () => {
 	const run = () => gulp.src(['src/pug/**/*.pug', '!src/pug/**/_*.pug'])
@@ -17,7 +31,7 @@ gulp.task('pug', () => {
 gulp.task('sass', function() {
 	return gulp.src('src/scss/**/*.+(scss|sass)')// Gets all files ending with .scss and .sass in app/scss and children dirs
 		   .pipe(sass()) // Convert Sass to CSS with gulp-sass
-		   .on('error', console.log)		
+		   .on('error', console.log)
 		   .pipe(gulp.dest('static/css/'))
 		   .pipe(browserSync.reload({stream: true}))
 });
@@ -25,7 +39,7 @@ gulp.task('sass', function() {
 /* gulp.task('browserSync', function() {
 	browserSync.init(
 	{
-		server: 
+		server:
 		{
 			baseDir: 'templates/main',
 			index: 'index.html'
@@ -42,13 +56,13 @@ gulp.task('browserSync', function() {
 	});
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'pug'], function() {
+gulp.task('watch', ['browserSync', 'tsc', 'sass', 'pug'], function() {
 	gulp.watch('src/scss/**/*.+(scss|sass)', ['sass']);
 	gulp.watch('src/pug/**/*.pug', ['pug']);
+	gulp.watch('src/ts/**/*.ts', ['tsc']);
 	// Reloads the browser whenever HTML or JS files change
-  gulp.watch('templates/main/*.html', browserSync.reload); 
-  gulp.watch('static/js/**/*.js', browserSync.reload); 
+  gulp.watch('templates/main/*.html', browserSync.reload);
+  gulp.watch('static/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('default',['watch']);
-
