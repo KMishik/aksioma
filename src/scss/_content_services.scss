@@ -6,26 +6,29 @@
     padding: 15px 0px 0px 0px;
   }
   .content {
-    width: 1200px;
-    margin: auto;
-    &.flex {
-      margin: 50px 50px 0px 50px;
-      justify-content: space-around;
-    }
-
+    width: 90%;
+    margin: 6% auto;
     .col {
-      width: 160px;
-      height: 230px;
-//     border: solid;
-      position: relative;
-      font-size: 0px;
-      cursor: pointer;
-      & > img {
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
+      .wrap {
+        width: 160px;
+        height: 213px;
+        margin: auto;
+        position: relative;
+        font-size: 0px;
+        cursor: pointer;
+        & > img {
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+        }  
+        &:hover {
+          .descriptor {
+            font-size: 14px;
+            visibility: visible;
+          }
+        }
       }
-      .annotate {
+      /* .annotate {
         width: 160%;
         height: 160%;
         background-color: azure;
@@ -40,7 +43,7 @@
           align-items: center;
           opacity: 1;
         }
-      }
+      } */
       .descriptor {
         position: absolute;
         visibility: hidden;
@@ -58,12 +61,6 @@
           text-align: center;
           font-weight: bold;
           padding: 5px 0px 10px 0px;
-        }
-      }
-      &:hover {
-        .descriptor {
-          font-size: 14px;
-          visibility: visible;
         }
       }
     }

@@ -8,8 +8,8 @@ html(lang='ru')
     link(rel='stylesheet', type='text/css', href="{% static 'css/main.css' %}")
     link(rel='stylesheet', type='text/css', href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}")
     link(rel='stylesheet', type='text/css', href="{% static 'assets/slick/css/slick.css' %}")
-    //-link(rel='stylesheet', type='text/css', href="{% static 'assets/slick/css/slick-theme.css' %}")
-    link(rel='stylesheet', type='text/css', href="{% static 'assets/owl/css/owl.carousel.css' %}")
+    link(rel='stylesheet', type='text/css', href="{% static 'assets/slick/css/slick-theme.css' %}")
+    //-link(rel='stylesheet', type='text/css', href="{% static 'assets/owl/css/owl.carousel.css' %}")
     //-link(rel='stylesheet', type='text/css', href="{% static 'assets/owl/css/owl.theme.default.css' %}")
 
   body
@@ -47,7 +47,7 @@ html(lang='ru')
       div(class='title')
         p Основные направления нашей деятельности:
       div(class='content servlist')
-          - for (let i = 0; i < 8; i++) {
+          - for (let i = 0; i < 7; i++) {
           include includes/_servlist.pug
           - }
     section(id='content-2')
@@ -67,6 +67,6 @@ html(lang='ru')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
     script(src="{% static 'js/core.js' %}")
     script(src="{% static 'assets/slick/js/slick.js' %}")
-    script(src="{% static 'assets/owl/js/owl.carousel.js' %}")
+    //-script(src="{% static 'assets/owl/js/owl.carousel.js' %}")
       
       

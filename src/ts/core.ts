@@ -23,7 +23,7 @@
       slidesToScroll: 1,
       draggable: false,
       slidesToShow: 4,
-      infinite: true,
+      infinite: false,
     });
   });
 } )(jQuery);
