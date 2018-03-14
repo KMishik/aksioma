@@ -1,7 +1,7 @@
 (function ($) {
     $(function () {
-        $('#services .content .col').on('click', function (event) {
-            $(this).children('.annotate').toggleClass('show');
+        $('#services .content .col .descriptor').on('click', function (event) {
+            return;
         });
         $('#services .content .col').on('mouseleave', function (event) {
             var annot = $(this).children('.annotate');

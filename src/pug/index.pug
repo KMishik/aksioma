@@ -48,8 +48,10 @@ html(lang='ru')
         p Основные направления нашей деятельности:
       div(class='content servlist')
           - for (let i = 0; i < 7; i++) {
-          include includes/_servlist.pug
+          div(id='annot-' + i, class='col')
+            include includes/_servlist.pug
           - }
+      div(class='annotations')
     section(id='content-2')
       div(class='title')
         p Раздел 2

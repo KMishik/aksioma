@@ -2,8 +2,8 @@
 (function($) {
   $(function() {
 
-    $('#services .content .col').on('click', function (event: JQuery.Event) {
-        $(this).children('.annotate').toggleClass('show');
+    $('#services .content .col .descriptor').on('click', function (event: JQuery.Event) {
+      return;
     });
 
     $('#services .content .col').on('mouseleave', function (event: JQuery.Event) {
