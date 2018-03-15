@@ -69,6 +69,10 @@
       & > h1 {
         font-size: 120%;
       }
+      & > p {
+        text-align: justify;
+        padding: 10px;
+      }
       &.show {
         display: flex;
       }
