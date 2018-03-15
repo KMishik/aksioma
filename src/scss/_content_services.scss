@@ -23,7 +23,6 @@
         }
         .descriptor {
           position: absolute;
-//          visibility: hidden;
           display: none;
           box-sizing: border-box;
           text-align: justify;
@@ -44,7 +43,6 @@
         &:hover {
           .descriptor {
             font-size: 14px;
-//            visibility: visible;
             display: block;
           }
         }
@@ -56,7 +54,25 @@
     }
   }
   .annotations {
-    display: none;
+    & > div {
+      width: 200px;
+      height: 310px;
+      padding: 5px;
+      box-sizing: border-box;
+      background-color: aquamarine;
+      position: absolute;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      z-index: 9999;
+      & > h1 {
+        font-size: 120%;
+      }
+      &.show {
+        display: flex;
+      }
+    }
   }
 }
 

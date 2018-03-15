@@ -3,12 +3,42 @@
   $(function() {
 
     $('#services .content .col .descriptor').on('click', function (event: JQuery.Event) {
-      return;
-    });
+      
+      let annotId: string;
+      let toFindAnnotId: string;
+      let curElem: JQuery, targetAnnotation: JQuery;
+      let curAnnotation: Node;
+      let posElem: JQuery.Coordinates, posAnnot: JQuery.Coordinates;
 
-    $('#services .content .col').on('mouseleave', function (event: JQuery.Event) {
-      let annot: JQuery = $(this).children('.annotate');
-      !(annot.hasClass('show')) || annot.removeClass('show');
+
+      curElem = $(this);
+      annotId = curElem.data("annot-id");
+      if (annotId === undefined || annotId === "" || isNaN(parseInt(annotId))) {
+        return;
+      }
+      toFindAnnotId = '#annot-' + annotId;
+      curAnnotation = $('.annotations').children(toFindAnnotId)[0];
+      if (curAnnotation === undefined) {
+        return;
+      }
+      targetAnnotation = $(curAnnotation);
+      posElem = curElem.offset();
+      posAnnot = { 
+        top: posElem.top + curElem.height() - 300,
+        left: posElem.left,
+      };
+
+      $('#overlay').one('click', function (event: JQuery.Event) {
+        targetAnnotation.removeClass('show');
+        $(this).removeClass('show');
+      });
+
+      $('#overlay').addClass('show');
+
+      targetAnnotation.css({top: posAnnot.top, left: posAnnot.left});
+      targetAnnotation.addClass('show');
+      
+      event.preventDefault();
     });
 
     /* $(".owl-carousel").owlCarousel({

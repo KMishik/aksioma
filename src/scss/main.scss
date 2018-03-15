@@ -40,6 +40,21 @@ header {
   height: 200px;
 }
 
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 9990;
+  &.show {
+    display: block;
+  }
+}
+
 #content-2 {
   background-color: rgba(#b9b87a, 0.86);
 }

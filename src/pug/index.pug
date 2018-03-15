@@ -1,3 +1,5 @@
+include includes/_mix_vars.pug
+
 doctype html
 |
 | {% load static %}
@@ -14,18 +16,18 @@ html(lang='ru')
 
   body
     header
-      div(id='nav-bar-top')
+      div#nav-bar-top
         div
           p +7 (812) 111-11-11
-        div(class='nav-menu')
+        div.nav-menu
           p 
             a(href='') Задать вопрос
           p 
             a(href='') Написать письмо
           p 
             a(href='') Заказать звонок              
-      div(id='nav-bar-main')
-        div(id='logo')
+      div#nav-bar-main
+        div#logo
         ul
           li 
             a(href='') О компании
@@ -37,21 +39,24 @@ html(lang='ru')
             a(href='') Решения
           li
             a(href='') Направления
-      div(id='nav-bar-center', class='table')
-        div(class='content row')
+      div#nav-bar-center.table
+        div.content.row
           p Поддержка бизнеса
           p в современном мире
           p AKsioma group
           p юридическая компания
-    section(id='services')
-      div(class='title')
+    section#services
+      div.title
         p Основные направления нашей деятельности:
-      div(class='content servlist')
-          - for (let i = 0; i < 7; i++) {
-          div(id='annot-' + i, class='col')
-            include includes/_servlist.pug
-          - }
-      div(class='annotations')
+      div.content.servlist
+        - for (let i = 0; i < 7; i++) {
+        div.col
+          include includes/_servlist.pug
+        - }
+      div.annotations
+        - for (let i = 0; i < 7; i++) {
+          +annot(i)
+        - }
     section(id='content-2')
       div(class='title')
         p Раздел 2
@@ -66,6 +71,7 @@ html(lang='ru')
       div(class='content')
     footer
       h1 Подвал
+    div#overlay
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
     script(src="{% static 'js/core.js' %}")
     script(src="{% static 'assets/slick/js/slick.js' %}")
