@@ -6,18 +6,19 @@
     padding: 15px 0px 0px 0px;
   }
   .content {
-    width: 90%;
-    margin: 6% auto;
+    width: 80%;
+    margin: 4% auto;
     .col {
       .wrap {
-        width: 160px;
-        height: 213px;
+        width: $imgWidth;
+        //height: 250px;
         margin: auto;
         position: relative;
         font-size: 0px;
         cursor: pointer;
         & > img {
           display: block;
+          width: $imgWidth;
           margin-right: auto;
           margin-left: auto;
         }
@@ -26,7 +27,7 @@
           display: none;
           box-sizing: border-box;
           text-align: justify;
-          padding: 5px 10px 5px 10px;
+          padding: 15%;
           height: 100%;
           background-color: black;
           opacity: 0.5;
@@ -36,6 +37,7 @@
           }
           h1 {
             text-align: center;
+            font-size: 16px;
             font-weight: bold;
             padding: 5px 0px 10px 0px;
           }
@@ -43,7 +45,10 @@
         &:hover {
           .descriptor {
             font-size: 14px;
-            display: block;
+            @include flexbox();
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
           }
         }
       }
@@ -55,12 +60,12 @@
   }
   .annotations {
     & > div {
-      width: 200px;
-      height: 310px;
+      width: $modal-width;
+      height: $modal-height;
       padding: 5px;
       box-sizing: border-box;
       background-color: aquamarine;
-      position: absolute;
+      position: fixed;
       overflow: hidden;
       display: none;
       flex-direction: column;
@@ -72,9 +77,6 @@
       & > p {
         text-align: justify;
         padding: 10px;
-      }
-      &.show {
-        display: flex;
       }
     }
   }

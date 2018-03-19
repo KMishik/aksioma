@@ -49,11 +49,11 @@ header {
   right: 0px;
   bottom: 0px;
   background: #000000;
-  opacity: 0.5;
+  opacity: 0.625;
   z-index: 9990;
-  &.show {
+  /* &.show {
     display: block;
-  }
+  } */
 }
 
 #content-2 {

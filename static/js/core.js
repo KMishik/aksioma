@@ -1,20 +1,5 @@
 (function ($) {
     $(function () {
-        function getElemenyPosition(elem) {
-            var elemRectangle = elem.getBoundingClientRect();
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;
-            var clientTop = document.documentElement.clientTop || document.body.clientTop || 0;
-            var clientLeft = document.documentElement.clientLeft || document.body.clientLeft || 0;
-            var top = elemRectangle.top + scrollTop - clientTop;
-            var left = elemRectangle.left + scrollLeft - clientLeft;
-            return {
-                top: top,
-                left: left,
-                height: elemRectangle.height,
-                width: elemRectangle.width
-            };
-        }
         $('#services .content .col .descriptor').on('click', function (event) {
             var curElem = $(this);
             var annotId = curElem.data("annot-id");
@@ -27,37 +12,35 @@
                 return;
             }
             var targetAnnotation = $(curAnnotation);
-            var posElem = getElemenyPosition(this);
-            var scrollViewHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
-            var scrollViewWidth = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
             var annotCssWidth = parseInt(targetAnnotation.css('width'));
             var annotCssHeight = parseInt(targetAnnotation.css('height'));
-            var calcTop = posElem.top + posElem.height - annotCssHeight;
-            var calcLeft = (posElem.left >= scrollViewWidth / 2) ? posElem.left - annotCssWidth + posElem.width : posElem.left;
-            if (annotCssHeight >= document.documentElement.clientHeight || calcTop <= window.pageYOffset) {
-                calcTop = window.pageYOffset;
+            var calcTop = document.documentElement.clientHeight / 2 - annotCssHeight / 2;
+            var calcLeft = document.documentElement.clientWidth / 2 - annotCssWidth / 2;
+            if (document.documentElement.clientHeight <= annotCssHeight) {
+                calcTop = 0;
             }
-            else if (calcTop + annotCssHeight > document.documentElement.clientHeight + window.pageYOffset) {
-                calcTop = document.documentElement.clientHeight - annotCssHeight + window.pageYOffset;
-            }
-            if (annotCssWidth >= document.documentElement.clientWidth) {
+            if (document.documentElement.clientWidth <= annotCssWidth) {
                 calcLeft = 0;
-            }
-            else if (calcLeft + annotCssWidth > document.documentElement.clientWidth + window.pageXOffset) {
-                calcLeft = document.documentElement.clientWidth - annotCssWidth + window.pageXOffset;
             }
             var posAnnot = {
                 top: calcTop,
-                left: calcLeft,
-                height: annotCssWidth
+                left: calcLeft
             };
-            $('#overlay').one('click', function (event) {
-                targetAnnotation.removeClass('show');
-                $(this).removeClass('show');
-            });
-            $('#overlay').addClass('show');
             targetAnnotation.css({ top: posAnnot.top, left: posAnnot.left });
-            targetAnnotation.addClass('show');
+            $('#overlay').one('click', function (event) {
+                var _this = this;
+                targetAnnotation.fadeOut(170, function () {
+                    targetAnnotation.css({ top: "", left: "" });
+                    $(_this).fadeOut(170);
+                });
+            });
+            $('#overlay').fadeIn(340);
+            targetAnnotation.fadeIn({
+                duration: 340,
+                start: function () {
+                    targetAnnotation.css({ display: "flex" });
+                }
+            });
             event.preventDefault();
         });
         $('.servlist').slick({
