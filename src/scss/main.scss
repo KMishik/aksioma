@@ -7,7 +7,6 @@
 
 html{
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 a {
@@ -51,9 +50,16 @@ header {
   background: #000000;
   opacity: 0.625;
   z-index: 9990;
+  overflow: auto;
   /* &.show {
     display: block;
   } */
+}
+
+button {
+  &.slick-prev:before, &.slick-next:before {
+    color: black;
+  }
 }
 
 #content-2 {
