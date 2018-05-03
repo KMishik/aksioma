@@ -17,7 +17,7 @@ let tsProject = ts.createProject({
 gulp.task('tsc', () => {
 	return gulp.src('src/ts/**/*.ts')
 						 .pipe(tsProject())
-						 .js.pipe(gulp.dest('static/js/'));
+						 .js.pipe(gulp.dest('static/main/js/'));
 });
 
 gulp.task('pug', () => {
@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 		   .pipe(sass().on('error', function(err) {
 			   sass.logError(err);
 		   })) // Convert Sass to CSS with gulp-sass
-		   .pipe(gulp.dest('static/css/'))
+		   .pipe(gulp.dest('static/main/css/'))
 		   .pipe(browserSync.reload({stream: true}))
 });
 
@@ -64,8 +64,8 @@ gulp.task('watch', ['browserSync', 'tsc', 'sass', 'pug'], function() {
 	gulp.watch('src/pug/**/*.pug', ['pug']);
 	gulp.watch('src/ts/**/*.ts', ['tsc']);
 	// Reloads the browser whenever HTML or JS files change
-  gulp.watch('templates/main/*.html', browserSync.reload);
-  gulp.watch('static/js/**/*.js', browserSync.reload);
+  gulp.watch('main/templates/main/*.html', browserSync.reload);
+  gulp.watch('static/main/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('default',['watch']);
