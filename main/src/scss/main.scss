@@ -29,13 +29,30 @@ a {
 .flex {
   @include flexbox();
 }
-
+div.content-wrapper > * {
+  max-width: $max-width;
+  margin: auto;
+}
 header {
   height: 400px;
   width: 100%;
+  & > .content-wrapper {
+    &:nth-child(1) {
+      background-color: #686370;
+    }
+    &:nth-child(2) {
+      background-color: #468a7f;
+    }
+    &:nth-child(3) {
+      background-image: url('../images/header.jpg');
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
-[id*='content'], footer {
+.section, .footer {
   color: #ffffff;
   height: 200px;
 }
@@ -62,18 +79,18 @@ button {
   }
 }
 
-#content-2 {
+#issue-2 {
   background-color: rgba(#b9b87a, 0.86);
 }
 
-#content-3 {
+#issue-3 {
   background-color: rgba(#87b97a, 0.86);
 }
 
-#content-4 {
+#issue-4 {
   background-color: rgba(#b9a77a, 0.86);
 }
 
-footer {
+.footer {
   background-color: #323131;
 }

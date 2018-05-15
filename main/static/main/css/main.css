@@ -6,7 +6,6 @@
   display: -webkit-flex;
   display: flex;
   justify-content: space-between;
-  background-color: #686370;
   color: #ffffff; }
   #nav-bar-top p {
     margin: 10px 0px 10px 0px; }
@@ -35,8 +34,6 @@
         content: ""; }
 
 #nav-bar-center {
-  background-image: url("../images/header.jpg");
-  background-size: auto;
   color: #ffffff; }
   #nav-bar-center .content {
     text-align: center;
@@ -52,7 +49,6 @@
       padding: 80px 0px 18px 0px; }
 
 #nav-bar-main {
-  background-color: #468a7f;
   color: #ffffff; }
   #nav-bar-main a {
     color: inherit; }
@@ -164,11 +160,24 @@ a {
   display: -webkit-flex;
   display: flex; }
 
+div.content-wrapper > * {
+  max-width: 1280px;
+  margin: auto; }
+
 header {
   height: 400px;
   width: 100%; }
+  header > .content-wrapper:nth-child(1) {
+    background-color: #686370; }
+  header > .content-wrapper:nth-child(2) {
+    background-color: #468a7f; }
+  header > .content-wrapper:nth-child(3) {
+    background-image: url("../images/header.jpg");
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat; }
 
-[id*='content'], footer {
+.section, .footer {
   color: #ffffff;
   height: 200px; }
 
@@ -190,14 +199,14 @@ header {
 button.slick-prev:before, button.slick-next:before {
   color: black; }
 
-#content-2 {
+#issue-2 {
   background-color: rgba(185, 184, 122, 0.86); }
 
-#content-3 {
+#issue-3 {
   background-color: rgba(135, 185, 122, 0.86); }
 
-#content-4 {
+#issue-4 {
   background-color: rgba(185, 167, 122, 0.86); }
 
-footer {
+.footer {
   background-color: #323131; }

@@ -35,8 +35,8 @@ gulp.task('sass', function() {
 		   .pipe(sass().on('error', function(err) {
 			   sass.logError(err);
 		   })) // Convert Sass to CSS with gulp-sass
-		   .pipe(gulp.dest('static/main/css/'))
-		   .pipe(browserSync.reload({stream: true}))
+		   .pipe(gulp.dest('static/main/css/'));
+		//    .pipe(browserSync.reload({stream: true}));
 });
 
 /* gulp.task('browserSync', function() {
@@ -55,17 +55,18 @@ gulp.task('browserSync', function() {
 	browserSync.init(
 	{
 		proxy: "127.0.0.1:8000",
-		notify: false
+		notify: false,
 	});
 });
 
-gulp.task('watch', ['browserSync', 'tsc', 'sass', 'pug'], function() {
+gulp.task('watch', ['tsc', 'sass', 'pug', 'browserSync'], function() {
 	gulp.watch('src/scss/**/*.+(scss|sass)', ['sass']);
 	gulp.watch('src/pug/**/*.pug', ['pug']);
 	gulp.watch('src/ts/**/*.ts', ['tsc']);
-	// Reloads the browser whenever HTML or JS files change
-  gulp.watch('main/templates/main/*.html', browserSync.reload);
-  gulp.watch('static/main/js/**/*.js', browserSync.reload);
+	// Reloads the browser whenever HTML,CSS or JS files change
+	gulp.watch('static/main/css/**/*.css', browserSync.reload);
+	gulp.watch('main/templates/main/*.html', browserSync.reload);
+	gulp.watch('static/main/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('default',['watch']);

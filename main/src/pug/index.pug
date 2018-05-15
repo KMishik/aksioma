@@ -16,184 +16,192 @@ html(lang='ru')
 
   body
     header
-      div#nav-bar-top
-        div
-          p +7 (812) 111-11-11
-        div.nav-menu
-          p 
-            a(href='') Задать вопрос
-          p 
-            a(href='') Написать письмо
-          p 
-            a(href='') Заказать звонок              
-      div#nav-bar-main
-        div#logo
-        ul
-          li 
-            a(href='') О компании
-          li
-            a(href='') Проекты
-          li 
-            a(href='') Клиенты
-          li
-            a(href='') Решения
-          li
-            a(href='') Направления
-      div#nav-bar-center.table
-        div.content.row
-          p Поддержка бизнеса
-          p в современном мире
-          p AKsioma group
-          p юридическая компания
-    section#services
-      div.title
-        p Основные направления нашей деятельности:
-      div.content.servlist
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='0')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/cat-0.jpg' %}")
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='1')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/cat-1.jpg' %}")
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='2')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/cat-2.jpg' %}")
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='3')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/cat-3.jpg' %}")
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='4')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/cat-4.jpg' %}")
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='5')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/cat-5.jpg' %}")
-        div.col
-          div.wrap
-            div(class='descriptor', data-annot-id='6')
-              h1 Заголовок.
-              p.
-                Предлагаем вам эту офигенскую
-                услугу по очень очень при очень
-                уникальным ценам.
-                Вы просто офигеете
-            img(src="{% static 'main/images/nocat-6.jpg' %}")
+      div.content-wrapper
+        div#nav-bar-top
+          div
+            p +7 (812) 111-11-11
+          div.nav-menu
+            p 
+              a(href='') Задать вопрос
+            p 
+              a(href='') Написать письмо
+            p 
+              a(href='') Заказать звонок
+      div.content-wrapper              
+        div#nav-bar-main
+          div#logo
+          ul
+            li 
+              a(href='') О компании
+            li
+              a(href='') Проекты
+            li 
+              a(href='') Клиенты
+            li
+              a(href='') Решения
+            li
+              a(href='') Направления
+      div.content-wrapper
+        div#nav-bar-center.table
+          div.content.row
+            p Поддержка бизнеса
+            p в современном мире
+            p AKsioma group
+            p юридическая компания
+    div.content-wrapper
+      section#services
+        div.title
+          p Основные направления нашей деятельности:
+        div.content.servlist
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='0')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/cat-0.jpg' %}")
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='1')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/cat-1.jpg' %}")
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='2')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/cat-2.jpg' %}")
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='3')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/cat-3.jpg' %}")
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='4')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/cat-4.jpg' %}")
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='5')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/cat-5.jpg' %}")
+          div.col
+            div.wrap
+              div(class='descriptor', data-annot-id='6')
+                h1 Заголовок.
+                p.
+                  Предлагаем вам эту офигенскую
+                  услугу по очень очень при очень
+                  уникальным ценам.
+                  Вы просто офигеете
+              img(src="{% static 'main/images/nocat-6.jpg' %}")
 
-      div.annotations
-        //- - for (let i = 0; i < 7; i++) {
-        //-   +annot(i)
-        //- - }
-        div(id='annot-0', class='annotate')
-          img(src="{% static 'main/images/cat-a-0.jpg' %}")
-          div
-            h1 Крутая Услуга номер ОДИН!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-        div(id='annot-1', class='annotate')
-          img(src="{% static 'main/images/cat-a-1.jpg' %}")
-          div
-            h1 Крутая Услуга номер ДВА!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-        div(id='annot-2', class='annotate')
-          img(src="{% static 'main/images/cat-a-2.jpg' %}")
-          div
-            h1 Крутая Услуга номер ТРИ!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-        div(id='annot-3', class='annotate')
-          img(src="{% static 'main/images/cat-a-3.jpg' %}")
-          div
-            h1 Крутая Услуга номер ЧЕТЫРЕ!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-        div(id='annot-4', class='annotate')
-          img(src="{% static 'main/images/cat-a-4.jpg' %}")
-          div
-            h1 Крутая Услуга номер ПЯТЬ!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-        div(id='annot-5', class='annotate')
-          img(src="{% static 'main/images/cat-a-5.jpg' %}")
-          div
-            h1 Крутая Услуга номер ШЕСТЬ!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-        div(id='annot-6', class='annotate')
-          img(src="{% static 'main/images/nocat-a-6.jpg' %}")
-          div
-            h1 Крутая Услуга номер СЕМЬ!
-            p.
-              Далеко-далеко за словесными горами в стране, 
-              гласных и согласных живут рыбные тексты. 
-              Большого, подзаголовок! 
-    section(id='content-2')
-      div(class='title')
-        p Раздел 2
-      div(class='content')
-    section(id='content-3')
-      div(class='title')
-        p Раздел 3
-      div(class='content')  
-    section(id='content-4')
-      div(class='title')
-        p Раздел 4
-      div(class='content')
-    footer
-      h1 Подвал
+        div.annotations
+          //- - for (let i = 0; i < 7; i++) {
+          //-   +annot(i)
+          //- - }
+          div(id='annot-0', class='annotate')
+            img(src="{% static 'main/images/cat-a-0.jpg' %}")
+            div
+              h1 Крутая Услуга номер ОДИН!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+          div(id='annot-1', class='annotate')
+            img(src="{% static 'main/images/cat-a-1.jpg' %}")
+            div
+              h1 Крутая Услуга номер ДВА!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+          div(id='annot-2', class='annotate')
+            img(src="{% static 'main/images/cat-a-2.jpg' %}")
+            div
+              h1 Крутая Услуга номер ТРИ!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+          div(id='annot-3', class='annotate')
+            img(src="{% static 'main/images/cat-a-3.jpg' %}")
+            div
+              h1 Крутая Услуга номер ЧЕТЫРЕ!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+          div(id='annot-4', class='annotate')
+            img(src="{% static 'main/images/cat-a-4.jpg' %}")
+            div
+              h1 Крутая Услуга номер ПЯТЬ!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+          div(id='annot-5', class='annotate')
+            img(src="{% static 'main/images/cat-a-5.jpg' %}")
+            div
+              h1 Крутая Услуга номер ШЕСТЬ!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+          div(id='annot-6', class='annotate')
+            img(src="{% static 'main/images/nocat-a-6.jpg' %}")
+            div
+              h1 Крутая Услуга номер СЕМЬ!
+              p.
+                Далеко-далеко за словесными горами в стране, 
+                гласных и согласных живут рыбные тексты. 
+                Большого, подзаголовок! 
+    div.content-wrapper.section#issue-2
+      section
+        div(class='title')
+          p Раздел 2
+        div(class='content')
+    div.content-wrapper.section#issue-3
+      section
+        div(class='title')
+          p Раздел 3
+        div(class='content')  
+    div.content-wrapper.section#issue-4
+      section
+        div(class='title')
+          p Раздел 4
+        div(class='content')
+    div.content-wrapper.footer
+      footer
+        h1 Подвал
     div#overlay
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
     script(src="{% static 'main/js/core.js' %}")
